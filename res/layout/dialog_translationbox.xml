@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:background="#10151E"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TRANSLATIONBOX &amp; OBD-PI SETTINGS"
+            android:textColor="#00E5FF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Configure Raspberry Pi telemetry bridge or direct CAN connection"
+            android:textColor="#7A8799"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="12dp"
+            android:background="#232D3D" />
+
+        <!-- Source Mode Selection -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TELEMETRY SOURCE"
+            android:textColor="#8C9BB0"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rg_source"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
+
+            <RadioButton
+                android:id="@+id/rb_translationbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TranslationBox (Pi Zero W Wi-Fi Dongle Bridge)"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <RadioButton
+                android:id="@+id/rb_obdpi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OBD-Pi (Direct CAN Hat on Raspberry Pi)"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <RadioButton
+                android:id="@+id/rb_direct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Direct OBD-II (Bluetooth ELM327 / OBDLink)"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <RadioButton
+                android:id="@+id/rb_simulator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Driving Simulator (Offline Test Mode)"
+                android:textColor="#FFB020"
+                android:textSize="13sp" />
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="12dp"
+            android:background="#232D3D" />
+
+        <!-- Bluetooth Device Selection -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TARGET BLUETOOTH BRIDGE"
+            android:textColor="#8C9BB0"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spn_bt_devices"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="6dp"
+            android:background="#18202C"
+            android:padding="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_open_bt_settings"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:background="#1E2838"
+                android:text="Pair New Device"
+                android:textColor="#A0B0C4"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="1dp" />
+
+            <Button
+                android:id="@+id/btn_refresh_bt"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:background="#1E2838"
+                android:text="Refresh List"
+                android:textColor="#A0B0C4"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="12dp"
+            android:background="#232D3D" />
+
+        <!-- Wi-Fi OBD Bridge Settings -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TRANSLATIONBOX BRIDGE IP &amp; PORT"
+            android:textColor="#8C9BB0"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_obd_ip"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_weight="2"
+                android:background="#18202C"
+                android:hint="192.168.0.10"
+                android:paddingHorizontal="10dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#556275"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="1dp" />
+
+            <EditText
+                android:id="@+id/et_obd_port"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_weight="1"
+                android:background="#18202C"
+                android:hint="35000"
+                android:inputType="number"
+                android:paddingHorizontal="10dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#556275"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_connection_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Status: Ready"
+            android:textColor="#30D158"
+            android:textSize="12sp" />
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:background="#1E2838"
+                android:text="Cancel"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="1dp" />
+
+            <Button
+                android:id="@+id/btn_connect"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:background="#00B0FF"
+                android:text="Apply &amp; Connect"
+                android:textColor="#050C16"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,15 @@
+[Unit]
+Description=CamryDash OBD-II to Bluetooth Bridge
+After=bluetooth.target network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/camrydash
+ExecStartPre=/usr/bin/sdptool add SP
+ExecStart=/usr/bin/python3 /opt/camrydash/obd_bridge.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
